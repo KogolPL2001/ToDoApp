@@ -1,4 +1,5 @@
 package com.example.todoapp;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,24 +7,34 @@ import java.util.UUID;
 
 public class TaskStorage {
     private static final TaskStorage taskStorage = new TaskStorage();
-    private final List<Task> tasks;
-    public static TaskStorage getInstance(){return taskStorage;}
-    private TaskStorage(){
-        tasks=new ArrayList<>();
-        for(int i=1;i<=150;i++)
-        {
-            Task task=new Task();
-            task.setName("Pilne zadanie numer "+i);
-            task.setDone(i%3==0);
+
+    private final List<Task> tasks = new ArrayList<>();
+
+    public static TaskStorage getInstance() {
+        return taskStorage;
+    }
+
+    private TaskStorage () {
+        for (int i = 0; i < 100; ++i) {
+            Task task = new Task();
+            task.setName(String.format("Task #%d", i));
+            task.setDone(i % 3 == 0);
             tasks.add(task);
         }
     }
-    public List<Task> getTasks(){
+
+    public List<Task> getTasks() {
         return tasks;
     }
 
-    public Task getTask(UUID taskId) {
-        Task task = tasks.get(taskId);
-        return task;
+    public Task getTask(UUID id) {
+        for (Task task : tasks) {
+            Log.d("UUID", String.format("%s, %s", id.toString(), task.getId().toString()));
+            if (id.equals(task.getId())) {
+                return task;
+            }
+        }
+
+        return null;
     }
 }
