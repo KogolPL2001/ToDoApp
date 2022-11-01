@@ -6,7 +6,7 @@ public class Task {
     private UUID id = UUID.randomUUID();
     private Date date = new Date();
     private boolean done = false;
-
+    private Category category=Category.Home;
     private String name;
 
     public boolean isDone() {
@@ -31,5 +31,17 @@ public class Task {
 
     public Date getDate() {
         return date;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setDate(Date date) {
+        this.date=date;
     }
 }

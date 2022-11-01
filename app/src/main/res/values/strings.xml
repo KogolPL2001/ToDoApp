@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">ToDoApp</string>
+    <string name="app_name">Zadania</string>
     <string name="hello_blank_fragment">Empty</string>
     <string name="task_name_label">Nazwa</string>
     <string name="task_name_hint">Wpisz nazwę zadania</string>
     <string name="task_details">Szczegóły zadania</string>
     <string name="task_done">Czy zadanie zostało wykonane?</string>
     <string name="title_activity_task_list">Zadania</string>
+    <string name="task_add_new">Nowe zadanie</string>
+    <string name="show_subtitle">Sprawdź liczbę zadań toDo</string>
+    <string name="hide_subtitle">Ukryj liczbę zadań toDo</string>
+    <string name="subtitle_format">%1$d zadań</string>
 </resources>
